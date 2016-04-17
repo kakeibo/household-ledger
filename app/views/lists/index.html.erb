@@ -1,1 +1,32 @@
+<h1>リストページ</h1>
+
+<table class="outcome">
+	<thead>
+		<tr>
+			<th>支出合計</th>
+			<th><%= %></th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @lists.each do |list| %>
+		<tr>
+			<td><%= %></td>
+			<td><%= %></td>
+		</tr>
+		<% end %>
+	</tbody>
+</table>
+<table class="income">
+	<thead>
+		<tr>
+			<th>収入合計</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td><%= %></td>
+		</tr>
+	</tbody>
+</table>
 
