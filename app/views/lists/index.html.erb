@@ -1,16 +1,27 @@
 <h1>リストページ</h1>
 
-<table class="outcome">
+<table class="outcome"　border="1" >
 	<thead>
 		<tr>
-			<th>支出合計</th>
-			<th><%= %></th>
+			<h2>支出</h2>
 		</tr>
 	</thead>
 	<tbody>
+		<tr>
+			<th>金額</th>
+			<th>カテゴリ</th>
+			<th>メモ</th>
+		</tr>
 		<% @lists.each do |list| %>
 		<tr>
 			<td><%= %></td>
+			<td><%= %></td>
+			<td><%= %></td>
+			<td><%= link_to '編集' %></td>
+			<td><%= link_to '削除' %></td>
+		</tr>
+		<tr>
+			<td>支出合計</td>
 			<td><%= %></td>
 		</tr>
 		<% end %>
