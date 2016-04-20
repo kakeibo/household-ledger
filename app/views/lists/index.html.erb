@@ -14,11 +14,8 @@
 		</tr>
 		<% @lists.each do |list| %>
 		<tr>
-			<td><%= %></td>
-			<td><%= %></td>
-			<td><%= %></td>
-			<td><%= link_to '編集' %></td>
-			<td><%= link_to '削除' %></td>
+			<td><%= link_to '編集' ,edit_path %></td>
+			<td><%= link_to '削除' ,delete_path %></td>
 		</tr>
 		<tr>
 			<td>支出合計</td>
