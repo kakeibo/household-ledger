@@ -1,5 +1,5 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:show, :edit, :update, :destroy]
+  before_action :set_list, only: [:edit, :update, :destroy]
   before_action :authenticate_author!, only: [:new, :edit, :create, :update, :destroy] 
 
 
@@ -8,7 +8,7 @@ class ListsController < ApplicationController
   end
 
   def new
-  	@lists = List.new
+  	@list = List.new
   end
  
   def edit
@@ -53,5 +53,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit()  
+    params.require(:list).permit(:category_id, :memo, :user_id, :sum)  
+  end
 end
