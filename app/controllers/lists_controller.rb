@@ -1,11 +1,14 @@
 class ListsController < ApplicationController
-  before_action :set_list, only: [:edit, :update, :destroy]
-#  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy] 
-
+  before_action :set_list, only: [:show, :edit, :update, :destroy]
+ #  before_action :authenticate_user!, only: [:new, :edit, :create, :update, :destroy] 
+ 
 
   def index
   	@lists = List.all
   end
+
+  def show
+    ends
 
   def new
   	@list = List.new
@@ -55,6 +58,6 @@ class ListsController < ApplicationController
     end
 
     def list_params
-      params.require(:list).permit(:category_id, :memo, :user_id, :amount)  
+      params.require(:list).permit(:category_id, :memo, :user_id, :sum)  
     end
 end

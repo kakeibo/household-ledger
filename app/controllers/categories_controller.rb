@@ -1,8 +1,11 @@
 class CategoriesController < ApplicationController
-	before_action :set_category, only: [:edit, :update, :destroy ]
+	before_action :set_category, only: [:show, :edit, :update, :destroy ]
 	
 	def index
 		@categories = Category.all
+	end
+
+	def show
 	end
 
 	def new
@@ -48,10 +51,10 @@ class CategoriesController < ApplicationController
 	 
 	private
 	    def set_category
-	 	  @category = Category.find(paraams[:id])
+	 	  @category = Category.find(params[:id])
 	    end
 
 	 	def category_params
-	 	  params.rqquire(:category).permit(:name)
+	 	  params.require(:category).permit(:name)
 	 	end
 end
