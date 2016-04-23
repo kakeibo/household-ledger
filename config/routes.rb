@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   resources :lists
 
   get '/lists' => 'lists#index'
-  get '/new' => 'lists#new'
-  get '/edit' => 'lists#edit'
+  get 'lists/new' => 'lists#new'
+  get 'lists/edit' => 'lists#edit'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

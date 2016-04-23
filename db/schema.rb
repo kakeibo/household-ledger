@@ -31,12 +31,12 @@ ActiveRecord::Schema.define(version: 20160423131746) do
   end
 
   create_table "lists", force: :cascade do |t|
-    t.integer  "categories_id"
+    t.integer  "category_id"
     t.text     "memo"
-    t.integer  "users_id"
+    t.integer  "user_id"
     t.integer  "sum"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
 end
