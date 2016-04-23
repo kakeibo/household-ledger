@@ -25,6 +25,7 @@ class ListsController < ApplicationController
   	  	format.html { render :new}
   	  	format.json { render json: @list.errors, status: :unprocessable_entity }
   	  end
+    end
   end
 
   def update
@@ -35,7 +36,8 @@ class ListsController < ApplicationController
         else 
           format.html { render :edit }
           format.json { render json: @list.errors, status: :unprocessable_entity }
-        end
+      end
+    end
   end
 
   def destroy
@@ -48,11 +50,11 @@ class ListsController < ApplicationController
 
   private
 
-  def set_list
-    @list = List.find(params[:id])
-  end
+    def set_list
+      @list = List.find(params[:id])
+    end
 
-  def list_params
-    params.require(:list).permit(:category_id, :memo, :user_id, :sum)  
-  end
+    def list_params
+      params.require(:list).permit(:category_id, :memo, :user_id, :sum)  
+    end
 end

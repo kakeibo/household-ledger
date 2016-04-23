@@ -22,6 +22,9 @@ class CategoriesController < ApplicationController
 		  else
 		  	format.html { render :edit}
 		  	format.json { render json: @category.errors, status: :unprocessable_entity }
+		  end
+		end
+	end
 
 	def update
 	  respond_to do |format|
@@ -33,23 +36,22 @@ class CategoriesController < ApplicationController
 	  	  format.json { render json: @category.errors, status: :unprocessable_entity }
 	  	end
 	  end
-	 end
+	end
 
-	 def destroy
-	 	@category.destroy
+	def destroy
+		@category.destroy
 	 	respond_to do |format|
 	 	  format.html { redirect_to categories_url, notice: 'カテゴリの削除が完了しました！！'}
 	 	  format.json { head :no_content }
 	 	end
-	 end
+	end
 	 
-	 private
-	 	def set_category
+	private
+	    def set_category
 	 	  @category = Category.find(paraams[:id])
-	 	 end
+	    end
 
-	 	 def category_params
-	 	   params.rqquire(:category).permit(:name)
-	 	 end
-	end	
+	 	def category_params
+	 	  params.rqquire(:category).permit(:name)
+	 	end
 end
